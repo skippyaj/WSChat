@@ -1,0 +1,22 @@
+main: me.skippy.wschat.main
+name: WSChat
+version: 1.0
+description: Chat Essentials
+author: Skippy
+commands:
+  clc:
+    description: Clear global chat
+  mc:
+    description: Mute chat
+  c:
+    description: Join Admin / Mod / Helper chat
+  coc:
+    description: Clear your own chat!
+  helper:
+  headhelper:
+  mod:
+  srmod:
+  admin:
+  headadmin:
+  sowner:
+  fire:
