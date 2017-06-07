@@ -116,11 +116,8 @@ public class staffranks
             }
             if (cmd.getName().equalsIgnoreCase("fire")) {
                 if (!sender.hasPermission("staffranks.fire") && !sender.isOp()) {
-                    return true;
-                }
-                {
-                    sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
-                    return true;
+                     sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                   return true;
                 }
                 if (args.length == 0) {
                     sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /fire <name>");
