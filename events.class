@@ -1,0 +1,66 @@
+package me.skippy.wschat;
+
+import java.util.ArrayList;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Server;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+
+public class events
+        implements Listener
+{
+    private main plugin;
+
+    public events(main plugin)
+    {
+        this.plugin = plugin;
+    }
+
+    final String space = " ";
+    final String chatprefix = ChatColor.DARK_GRAY + "[" + ChatColor.RED + "WSChat" + ChatColor.DARK_GRAY + "]";
+
+    @EventHandler
+    public void onTalk(AsyncPlayerChatEvent e)
+    {
+        Player p = e.getPlayer();
+        String msg = e.getMessage();
+        String name = e.getPlayer().getName();
+        if (this.plugin.admin.contains(p))
+        {
+            e.setCancelled(true);
+            this.plugin.getServer().getConsoleSender().sendMessage(this.chatprefix + " " + ChatColor.RED + ChatColor.BOLD + "ADMIN" + " " + ChatColor.RED + name + " " + ChatColor.DARK_GRAY + "§" + " " + ChatColor.YELLOW + msg);
+            Bukkit.broadcast("§8(§c§l*§8) §c" + name + " §8§ §e" + msg, "wschat.chat.admin");
+            return;
+        }
+        if (this.plugin.mod.contains(p))
+        {
+            e.setCancelled(true);
+            this.plugin.getServer().getConsoleSender().sendMessage(this.chatprefix + " " + ChatColor.DARK_AQUA + ChatColor.BOLD + "MOD" + " " + ChatColor.AQUA + name + " " + ChatColor.DARK_GRAY + "§" + " " + ChatColor.YELLOW + msg);
+            Bukkit.broadcast("§8(§3§l*§8) §a" + name + " §8§ §e" + msg, "wschat.chat.mod");
+            return;
+        }
+        if (this.plugin.helper.contains(p))
+        {
+            e.setCancelled(true);
+            this.plugin.getServer().getConsoleSender().sendMessage(this.chatprefix + " " + ChatColor.DARK_GREEN + ChatColor.BOLD + "HELPER" + " " + ChatColor.GREEN + name + " " + ChatColor.DARK_GRAY + "§" + " " + ChatColor.YELLOW + msg);
+            Bukkit.broadcast("§8(§2§l*§8) §a" + name + " §8§ §e" + msg, "wschat.chat.helper");
+            return;
+        }
+        if (this.plugin.mute)
+        {
+            if (e.getPlayer().hasPermission("wschat.mutechat.bypass"))
+            {
+                e.setCancelled(false);
+                return;
+            }
+            String chatismuted = "&c&lThe chat is currently muted!".replace('&', '§');
+
+            e.setCancelled(true);
+            e.getPlayer().sendMessage(this.plugin.prefix + this.plugin.space + chatismuted);
+        }
+    }
+}
