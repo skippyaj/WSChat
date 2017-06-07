@@ -16,7 +16,7 @@ public class staffranks
 
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (cmd.getName().equalsIgnoreCase("helper")) {
-            if (!sender.hasPermission("staffranks.helper")) {
+            if (!sender.hasPermission("staffranks.helper") && !sender.isop()) {
                 sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
                 return true;
             }
@@ -31,7 +31,7 @@ public class staffranks
             return true;
         }
         if (cmd.getName().equalsIgnoreCase("headhelper")) {
-            if (!sender.hasPermission("staffranks.headhelper")) {
+            if (!sender.hasPermission("staffranks.headhelper") && !sender.isOp()) {
                 sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
                 return true;
             }
@@ -47,7 +47,7 @@ public class staffranks
             return true;
         }
         if (cmd.getName().equalsIgnoreCase("mod")) {
-            if (!sender.hasPermission("staffranks.mod")) {
+            if (!sender.hasPermission("staffranks.mod") && !sender.isOp()) {
                 sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
                 return true;
             }
@@ -63,7 +63,7 @@ public class staffranks
             return true;
         }
         if (cmd.getName().equalsIgnoreCase("srmod")) {
-            if (!sender.hasPermission("staffranks.srmod")) {
+            if (!sender.hasPermission("staffranks.srmod") && !sender.isOp()) {
                 sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
                 return true;
             }
