@@ -1,0 +1,161 @@
+package me.skippy.wschat;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+
+public class staffranks
+        implements CommandExecutor {
+    private main plugin;
+
+    public staffranks(main plugin) {
+        this.plugin = plugin;
+    }
+
+    public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
+        if (cmd.getName().equalsIgnoreCase("helper")) {
+            if (!sender.hasPermission("staffranks.helper")) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            if (args.length == 0) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /helper <name>");
+                return true;
+            }
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add helper");
+
+            Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has set" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "'s" + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "rank to" + ChatColor.GREEN + " Helper", "staffranks.alert");
+            sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Rank set successfully!");
+            return true;
+        }
+        if (cmd.getName().equalsIgnoreCase("headhelper")) {
+            if (!sender.hasPermission("staffranks.headhelper")) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            if (args.length == 0) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /headhelper <name>");
+                return true;
+            }
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add head-helper");
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove helper");
+
+            Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has set" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "'s" + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "rank to" + ChatColor.GREEN + " Head-Helper", "staffranks.alert");
+            sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Rank set successfully!");
+            return true;
+        }
+        if (cmd.getName().equalsIgnoreCase("mod")) {
+            if (!sender.hasPermission("staffranks.mod")) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            if (args.length == 0) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /mod <name>");
+                return true;
+            }
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add mod");
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove head-helper");
+
+            Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has set" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "'s" + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "rank to" + ChatColor.DARK_AQUA + " Moderator", "staffranks.alert");
+            sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Rank set successfully!");
+            return true;
+        }
+        if (cmd.getName().equalsIgnoreCase("srmod")) {
+            if (!sender.hasPermission("staffranks.srmod")) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            if (args.length == 0) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /srmod <name>");
+                return true;
+            }
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add srmod");
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add sr-mod");
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove mod");
+
+            Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has set" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "'s" + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "rank to" + ChatColor.BLUE + " Senior-Moderator", "staffranks.alert");
+            sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Rank set successfully!");
+            return true;
+        }
+        if (cmd.getName().equalsIgnoreCase("admin")) {
+            if (!sender.hasPermission("staffranks.admin") && !sender.isOp()) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+
+                }
+                if (args.length == 0) {
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /admin <name>");
+                    return true;
+                }
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "op " + args[0]);
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add admin");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove sr-mod");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove srmod");
+
+                Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has set" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "'s" + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "rank to" + ChatColor.RED + " Administrator", "staffranks.alert");
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Rank set successfully!");
+                return true;
+            }
+            if (cmd.getName().equalsIgnoreCase("headadmin")) {
+                if (!sender.hasPermission("staffranks.headadmin") && !sender.isOp()) {
+                    return true;
+                }
+                {
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                    return true;
+                }
+                if (args.length == 0) {
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /headadmin <name>");
+                    return true;
+                }
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add head-admin");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove admin");
+
+                Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has set" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "'s" + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "rank to" + ChatColor.DARK_RED + " Head-Administrator", "staffranks.alert");
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Rank set successfully!");
+                return true;
+            }
+            if (cmd.getName().equalsIgnoreCase("fire")) {
+                if (!sender.hasPermission("staffranks.fire") && !sender.isOp()) {
+                    return true;
+                }
+                {
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                    return true;
+                }
+                if (args.length == 0) {
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /fire <name>");
+                    return true;
+                }
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add default");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add member");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Helper");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove HeadHelper");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Head-Helper");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Mod");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove SrMod");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Sr-Mod");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Admin");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Head-Admin");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove HeadAdmin");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Owner");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "deop " + args[0]);
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " remove permissions.*");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " remove *");
+
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + args[0] + ChatColor.GRAY + ChatColor.ITALIC + " sucessfully fired! Check pex file to make sure all permissions are removed.");
+                Bukkit.broadcast(this.plugin.prefix + this.plugin.space + ChatColor.DARK_AQUA + sender.getName() + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "has fired" + this.plugin.space + ChatColor.DARK_AQUA + args[0] + "!", "staffranks.alert");
+                return true;
+            }
+            return false;
+        }
+        return true;
+    }
+}
+
+
+
+
+
