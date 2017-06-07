@@ -1,0 +1,48 @@
+package me.skippy.wschat;
+
+import java.util.ArrayList;
+import java.util.logging.Logger;
+import org.bukkit.Server;
+import org.bukkit.command.PluginCommand;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class main
+        extends JavaPlugin
+        implements Listener
+{
+    public ArrayList<Player> admin = new ArrayList();
+    public ArrayList<Player> mod = new ArrayList();
+    public ArrayList<Player> helper = new ArrayList();
+    public String prefix = "&9&lMCWarside &8»".replace('&', '§');
+    public String noperms = "&c&lYou do not have permission to use this command!".replace('&', '§');
+    public String space = " ";
+    public boolean mute;
+
+    public void onEnable()
+    {
+        getLogger().info("WSChat Enabled");
+        getLogger().info("Author: Skippy");
+        getLogger().info("Version: 1.0");
+
+        saveDefaultConfig();
+
+        getCommand("mc").setExecutor(new mutechat(this));
+        getCommand("clc").setExecutor(new clearchat(this));
+        getCommand("coc").setExecutor(new clearchat(this));
+        getCommand("c").setExecutor(new chatchannels(this));
+
+        getCommand("helper").setExecutor(new staffranks(this));
+        getCommand("headhelper").setExecutor(new staffranks(this));
+        getCommand("mod").setExecutor(new staffranks(this));
+        getCommand("srmod").setExecutor(new staffranks(this));
+        getCommand("admin").setExecutor(new staffranks(this));
+        getCommand("headadmin").setExecutor(new staffranks(this));
+        getCommand("sowner").setExecutor(new staffranks(this));
+        getCommand("fire").setExecutor(new staffranks(this));
+
+        getServer().getPluginManager().registerEvents(new events(this), this);
+    }
+}
