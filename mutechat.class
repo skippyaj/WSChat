@@ -1,0 +1,47 @@
+package me.skippy.wschat;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.event.Listener;
+
+public class mutechat
+        implements CommandExecutor, Listener
+{
+    private main plugin;
+
+    public mutechat(main plugin)
+    {
+        this.plugin = plugin;
+    }
+
+    final String space = " ";
+
+    public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args)
+    {
+        if (cmd.getName().equalsIgnoreCase("mc"))
+        {
+            if (!sender.hasPermission("wschat.mutechat"))
+            {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            if (!this.plugin.mute)
+            {
+                this.plugin.mute = true;
+                String chatmuted = "&7The chat has been &cmuted &7by&8: &4&l{player}".replace('&', '§').replace("{player}", sender.getName());
+                Bukkit.broadcastMessage(this.plugin.prefix + this.plugin.space + chatmuted);
+                this.plugin.getServer().getConsoleSender().sendMessage(ChatColor.RED + "" + ChatColor.BOLD + sender.getName() + " " + ChatColor.GRAY + "muted chat!");
+                return true;
+            }
+            this.plugin.mute = false;
+            String chatunmuted = "&7The chat has been &cunmuted &7by&8: &4&l{player}".replace('&', '§').replace("{player}", sender.getName());
+            this.plugin.getServer().getConsoleSender().sendMessage((ChatColor.BLUE + "" + ChatColor.BOLD + sender.getName() + " " + ChatColor.GRAY + "unmuted chat!"));
+            Bukkit.broadcastMessage(this.plugin.prefix + this.plugin.space + chatunmuted);
+            return true;
+        }
+        return false;
+    }
+}
