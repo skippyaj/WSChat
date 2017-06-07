@@ -1,0 +1,79 @@
+package me.skippy.wschat;
+
+import java.util.ArrayList;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class chatchannels
+        implements CommandExecutor
+{
+    private main plugin;
+
+    public chatchannels(main plugin)
+    {
+        this.plugin = plugin;
+    }
+
+    public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args)
+    {
+        Player p = (Player)sender;
+        if (cmd.getName().equalsIgnoreCase("c"))
+        {
+            if (!sender.hasPermission("wschat.chat.helper"))
+            {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            if (args.length == 0)
+            {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.RED + ChatColor.BOLD + "/c <admin/mod/helper>");
+                return true;
+            }
+            if ((args[0].equalsIgnoreCase("helper")) || ((args[0].equalsIgnoreCase("h")) && (sender.hasPermission("wschat.chat.helper"))))
+            {
+                if (this.plugin.helper.contains(p))
+                {
+                    this.plugin.helper.remove(p);
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + "§7You have left §aHelper §7chat!");
+                    return true;
+                }
+                this.plugin.helper.add(p);
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + "§7You have joined §aHelper §7chat!");
+                return true;
+            }
+            if ((args[0].equalsIgnoreCase("mod")) || ((args[0].equalsIgnoreCase("m")) && (sender.hasPermission("wschat.chat.mod"))))
+            {
+                if (this.plugin.mod.contains(p))
+                {
+                    this.plugin.mod.remove(p);
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + "§7You have left §3Moderator §7chat!");
+                    return true;
+                }
+                this.plugin.mod.add(p);
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + "§7You have joined §3Moderator §7chat!");
+                return true;
+            }
+            if ((args[0].equalsIgnoreCase("admin")) || ((args[0].equalsIgnoreCase("a")) && (sender.hasPermission("wschat.chat.admin"))))
+            {
+                if (this.plugin.admin.contains(p))
+                {
+                    this.plugin.admin.remove(p);
+                    sender.sendMessage(this.plugin.prefix + this.plugin.space + "§7You have left §cAdministrator §7chat!");
+                    return true;
+                }
+                this.plugin.admin.add(p);
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + "§7You have joined §cAdministrator §7chat!");
+                return true;
+            }
+            if ((p.hasPermission("wschat.chat.helper")) && ((!args[0].equalsIgnoreCase("helper")) || (!args[0].equalsIgnoreCase("h")) || (!args[0].equalsIgnoreCase("m")) || (!args[0].equalsIgnoreCase("mod")) || (!args[0].equalsIgnoreCase("a")) || (!args[0].equalsIgnoreCase("admin"))))
+            {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.RED + ChatColor.BOLD + "/c <admin/mod/helper>");
+                return true;
+            }
+        }
+        return false;
+    }
+}
