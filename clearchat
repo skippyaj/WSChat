@@ -1,0 +1,52 @@
+package me.skippy.wschat;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Server;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
+
+public class clearchat
+        implements CommandExecutor
+{
+    private main plugin;
+
+    public clearchat(main plugin)
+    {
+        this.plugin = plugin;
+    }
+
+    final String space = " ";
+    final String chatprefix = org.bukkit.ChatColor.DARK_GRAY + "[" + org.bukkit.ChatColor.RED + "WSChat" + org.bukkit.ChatColor.DARK_GRAY + "]";
+
+    public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args)
+    {
+        if (cmd.getName().equalsIgnoreCase("clc")) {
+            if (!sender.hasPermission("wschat.clearchat")) {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            for (int x = 0; x < 150; x++) {
+                Bukkit.broadcastMessage(" ");
+            }
+            String chatcleared = "&7The chat has been &ccleared &7by&8: &4&l{player}".replace('&', '§').replace("{player}", sender.getName());
+            Bukkit.broadcastMessage(this.plugin.prefix + this.plugin.space + chatcleared);
+
+        }
+        if (cmd.getName().equalsIgnoreCase("coc"))
+        {
+            if (!sender.hasPermission("wschat.clearownchat"))
+            {
+                sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
+                return true;
+            }
+            for (int x = 0; x < 150; x++) {
+                sender.sendMessage(" ");
+            }
+            String chatcleared = "&7&lYou have cleared your own chat!".replace('&', '§');
+            sender.sendMessage(this.plugin.prefix + this.plugin.space + chatcleared);
+        }
+        return false;
+    }
+}
