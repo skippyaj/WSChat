@@ -100,9 +100,6 @@ public class staffranks
             }
             if (cmd.getName().equalsIgnoreCase("headadmin")) {
                 if (!sender.hasPermission("staffranks.headadmin") && !sender.isOp()) {
-                    return true;
-                }
-                {
                     sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
                     return true;
                 }
