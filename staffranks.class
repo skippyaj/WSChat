@@ -19,7 +19,6 @@ public class staffranks
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (cmd.getName().equalsIgnoreCase("helper")) {
         	@SuppressWarnings("unused")
-			Permission perm = new Permission("staffranks.helper", PermissionDefault.FALSE);
             if (!sender.hasPermission("staffranks.helper")) {
                 sender.sendMessage(this.plugin.prefix + this.plugin.space + this.plugin.noperms);
                 return true;
@@ -144,8 +143,6 @@ public class staffranks
                 sender.sendMessage(this.plugin.prefix + this.plugin.space + ChatColor.GRAY + ChatColor.ITALIC + "Usage: /fire <name>");
                 return true;
             }
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add default");
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group add member");
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Helper");
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove HeadHelper");
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pex user " + args[0] + " group remove Head-Helper");
