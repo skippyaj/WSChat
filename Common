@@ -195,7 +195,7 @@ Crate:
       Commands:
         - 'giveitem %Player% Edefault 16'
       Messages:
-        - '&4&lMake ExtendedDefault God Apple.&7You just won &c&l32x &7Extended Default God Apples.’
+        - '&4&lMake ExtendedDefault God Apple.&7You just won &c&l32x &7Extended Default God Apples.'
     10:
       DisplayName: '&e&lCow Spawner'
       DisplayItem: '314'
