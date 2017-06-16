@@ -1,5 +1,5 @@
 Crate:
-  CrateType: QuadCrate #Type of crate (CSGO/QuadCrate/QuickCrate/Roulette/CrateOnTheGo/FireCracker/Wonder/Wheel/War/Cosmic(This requires a additional info to work.)).
+  CrateType: Roulette #Type of crate (CSGO/QuadCrate/QuickCrate/Roulette/CrateOnTheGo/FireCracker/Wonder/Wheel/War/Cosmic(This requires a additional info to work.)).
   CrateName: '&8Koth Crate' #Name of the Inventory if a GUI crate.
   StartingKeys: 0 #Starting amount of keys when the player 1st joins.
   InGUI: true #If the crate shows in the /cc GUI. (If the crate type is QuickCrate/CrateOnTheGo/FireCracker then the Crate will not work. Quick Crate requires a Physical Crate.)
@@ -40,84 +40,96 @@ Crate:
 #############################################
   Prizes: #All the prizes that can be gotten in the Crate.
     1:
-      DisplayName: '&7&lKit Detective' #Name of the item shown by the crate.
-      DisplayItem: '2' #Item that is shown by the crate.
-      DisplayAmount: 1 #The amount that is displayed.
-      Lore: #Lore will be shown in rewards GUI.
-        - '&7Win kit Detective'
-      MaxRange: 100 #The max range that the chance will go though.
-      Chance: 16 #Chance of that item getting picked. It would be 40/100 chance because MaxRange is 100.
-      Firework: false #Firework when it is won.
-      Glowing: false #Toggle if the item has a glowing effect but doesn't have an enchantment on it.
-      Player: '' #Set the item to 397:3 and then add the players name for this to take effect.
-#        For Cosmic Crates Only
-#############################################
-#       Tiers: #The Tiers the rewards can be found in.
-#         - 'Basic'
-#         - 'UnCommon'
-#         - 'Rare'
-#############################################
-      #Items that the player wins if this prize is picked. (If you wish not to give an Item in the prize just delete the Items Section)
-      #Please use these to make the item.
-      #Item: to decide the kind of item it is.
-      #Amount: the amount of that item they get.
-      #Name: a custom name for that item (ColorCode dose work).
-      #Lore: a custom lore for the item (ColorCode does work) and to make a new line in the lore use a , to split the lines.
-      Items:
-        - 'Item:2, Amount:32, Name:&7&lBasic Grass'
-      #Commands are the commands that are run when this prize is won. (If you wish not to use a CMD in the prize just delete the Commands Section)
-      #You can use %Player% to get the player that won the prize.
-      Commands:
-        - 'broadcast &6&l%Player% &7has just won some Basic Grass.'
-      #Messages: option allows you to send players messages and not have to pm them with commands.
-      #If you do not wish to have players get messaged that they won this prize then just remove the Messages: option.
-      Messages:
-        - '&7You just won a &7&lBasic Grass&7.'
-    2:
-      DisplayName: '&a&l$800'
-      DisplayItem: '314'
+      DisplayName: '&7Kit Guard'
+      DisplayItem: '340' 
       DisplayAmount: 1
-      Lore:
-        - '&7Win &a$800 In-Game Money'
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 2000'
+        - '&8> &7&oSharpness 120'
+        - '&8'
+        - '&8> &7&oKit Guard is apart of the $180 Guard Rank!'
       MaxRange: 100
-      Chance: 12
+      Chance: 16
       Firework: true
       Glowing: false
       Player: ''
       Commands:
-        - 'eco give %Player% 800'
+        - 'voucher give Guard 1 %Player%'
       Messages:
-        - '&7You just won &a&l$800 In-Game Money.'
+        - '&9&l(!) &7&oYou have won Kit Guard Voucher!.'   
+    2:
+      DisplayName: '&7Kit Major'
+      DisplayItem: '340'
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 900'
+        - '&8> &7&oSharpness 90'
+        - '&8'
+        - '&8> &7&oKit Major is apart of the $75 Major Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Major 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Major Voucher!.'
+    4:
+      DisplayName: '&7Kit Admiral'
+      DisplayItem: '340' 
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 1000'
+        - '&8> &7&oSharpness 100'
+        - '&8'
+        - '&8> &7&oKit Admiral is apart of the $180 Admiral Rank!'
+      MaxRange: 100
+      Chance: 10
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Admiral 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Admiral Voucher!.' 
+
     3:
       DisplayName: '&a&l$1000'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
         - '&7Win &a&l$1000 In-Game Money'
       MaxRange: 100
-      Chance: 12
+      Chance: 15
       Firework: true
       Glowing: false
       Player: ''
       Commands:
         - 'eco give %Player% 1000'
       Messages:
-        - '&7You just won &a&l$1000 In-Game Money.'
+        - '&9&l(!) &7&oYou just won &a&l$1000 In-Game Money'
     3:
-      DisplayName: '&a&l$1500'
-      DisplayItem: '314'
+      DisplayName: '&a&l$2000'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
-        - '&7Win &a&l$1500 In-Game Money'
+        - '&7Win &a&l$2000 In-Game Money'
       MaxRange: 100
       Chance: 12
       Firework: true
       Glowing: false
       Player: ''
       Commands:
-        - 'eco give %Player% 1500'
+        - 'eco give %Player% 2000'
       Messages:
-        - '&7You just won &a&l$1500 In-Game Money.'
+        - '&9&l(!) &7&oYou just won &a&l$2000 In-Game Money'
     5:
       DisplayName: '&6&l/InstantTeleport Perk'
       DisplayItem: '314'
@@ -135,52 +147,52 @@ Crate:
         - '&7You just won the &6/InstantTeleport perk.'
     6:
       DisplayName: '&6/fly Perk'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
         - '&7Win the command &6/fly'
       MaxRange: 100
       Chance: 10
       Firework: true
-      Glowing: false
+      Glowing: true
       Player: ''
       Commands:
         - 'voucher give Fly 1 %Player%'
       Messages:
-        - '&7You just won the &6/fly perk.'
+        - '&9&l(!) &7&oYou just won the &6/fly perk.'
     7:
       DisplayName: '&6/near Perk'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
         - '&7Win the command &6/near'
       MaxRange: 100
       Chance: 10
       Firework: true
-      Glowing: false
+      Glowing: true
       Player: ''
       Commands:
         - 'voucher give Near 1 %Player%'
       Messages:
-        - '&7You just won the &6/near perk.'
-    8:
+        - '&9&l(!) &7&oYou just won the &6/near perk.'
+    12:
       DisplayName: '&e&lCow Spawner'
-      DisplayItem: '314'
+      DisplayItem: '52'
       DisplayAmount: 1
       Lore:
         - '&7Win a &e&lCow Spawner'
       MaxRange: 100
-      Chance: 1
+      Chance: 9
       Firework: true
       Glowing: false
       Player: ''
       Commands:
         - 'es give %Player% Cow 1'
       Messages:
-        - '&7You just won a &e&lCow Spawner.'
-    9:
+        - '&9&l(!) &7&oYou just won a &e&lCow Spawner.'
+    13:
       DisplayName: '&e&lZombie Spawner'
-      DisplayItem: '314'
+      DisplayItem: '52'
       DisplayAmount: 1
       Lore:
         - '&7Win a &e&lZombie Spawner'
@@ -192,22 +204,7 @@ Crate:
       Commands:
         - 'es give %Player% Zombie 1'
       Messages:
-        - '&7You just won a &e&lZombie Spawner.'
-    10:
-      DisplayName: '&e&lSkeleton Spawner'
-      DisplayItem: '314'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win a &e&lSkeleton Spawner'
-      MaxRange: 100
-      Chance: 1
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'es give %Player% Skeleton 1'
-      Messages:
-        - '&7You just won a &e&lSkeleton Spawner.'
+        - '&9&l(!) &7&oYou just won a &e&lZombie Spawner.'
     11:
       DisplayName: '&e&lSpider Spawner'
       DisplayItem: '314'
@@ -223,3 +220,48 @@ Crate:
         - 'es give %Player% Spider 1'
       Messages:
         - '&7You just won a &e&lSpider Spawner.'
+    14:
+      DisplayName: '&c&l16x &8&lBedrock'
+      DisplayItem: '7'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win &c&l16x &8&lBedrock'
+      MaxRange: 100
+      Chance: 1
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'give %Player% bedrock 16'
+      Messages:
+        - '&9&l(!) &7&oYou just won &c16x &8&lBedrock.'
+    15:
+      DisplayName: '&7Common key'
+      DisplayItem: '131'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a Common key'
+      MaxRange: 100
+      Chance: 5
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Common 2 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a 2x Common Key’s.'
+    15:
+      DisplayName: '&7Rare key'
+      DisplayItem: '131'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a Rare key'
+      MaxRange: 100
+      Chance: 3
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Rare 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a Rare Key.'
