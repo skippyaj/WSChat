@@ -59,7 +59,6 @@ Crate:
         - 'voucher give Enforcer 1 %Player%'
       Messages:
         - '&9&l(!) &7&oYou have won Kit Enforcer Voucher!.'
-
     2:
       DisplayName: '&7Kit Major'
       DisplayItem: '340'
