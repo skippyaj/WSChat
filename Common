@@ -44,11 +44,10 @@ Crate:
       DisplayItem: '340' 
       DisplayAmount: 1 
       Lore: 
-        - '&9&lKit Detective'
         - '&7'
         - '&3&lDescription:'
-        - '&8> &7&oProtection 500'
-        - '&8> &7&oSharpness 50'
+        - '&8> &7&oProtection 400'
+        - '&8> &7&oSharpness 30'
         - '&8'
         - '&8> &7&oKit Detective is apart of the $10 Detective Rank!'
       MaxRange: 100 
@@ -61,38 +60,48 @@ Crate:
       Messages:
         - '&9&l(!) &7&oYou have won Kit Detective Voucher!.'
     3:
-      DisplayName: '&7Kit &f&lSergeant'
-      DisplayItem: '314'
+      DisplayName: '&7Kit Sergeant'
+      DisplayItem: '340' 
       DisplayAmount: 1
       Lore:
-        - '&7Win a Kit &f&lSergeant'
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 500'
+        - '&8> &7&oSharpness 50'
+        - '&8'
+        - '&8> &7&oKit Sergeant is apart of the $20 Sergeant Rank!'
       MaxRange: 100
       Chance: 16
       Firework: true
       Glowing: false
       Player: ''
       Commands:
-        - 'kit %Player% Sergeant'
+        - 'voucher give Sergeant 1 %Player%'
       Messages:
-        - '&7You just won a Kit &f&lSergeant.'
+        - '&9&l(!) &7&oYou have won Kit Sergeant Voucher!.'
     4:
-      DisplayName: '&7Kit &c&lLieutenant'
-      DisplayItem: '314'
+      DisplayName: '&7Kit Lieutenant'
+      DisplayItem: '340' 
       DisplayAmount: 1
       Lore:
-        - '&7Win a Kit &c&lLieutenant'
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 600'
+        - '&8> &7&oSharpness 60'
+        - '&8'
+        - '&8> &7&oKit Sergeant is apart of the $30 Lieutenant Rank!'
       MaxRange: 100
       Chance: 16
       Firework: true
       Glowing: false
       Player: ''
       Commands:
-        - 'kit %Player% Lieutenant'
+        - 'voucher give Lieutenant 1 %Player%'
       Messages:
-        - '&7You just won a Kit &c&lLieutenant.'
+        - '&9&l(!) &7&oYou have won Kit Lieutenant Voucher!.'
     5:
       DisplayName: '&a&l$10'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
         - '&7Win $10 In-Game Money'
@@ -107,7 +116,7 @@ Crate:
         - '&7You just won &a$10 In-Game Money.'
     6:
       DisplayName: '&a&l$100'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
         - '&7Win a $100 In-Game Money'
@@ -122,7 +131,7 @@ Crate:
         - '&7You just won &a$100 In-Game Money.'
     7:
       DisplayName: '&a&l$500'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
         - '&7Win a $500 In-Game Money'
@@ -137,7 +146,7 @@ Crate:
         - '&7You just won &a$500 In-Game Money.'
     8:
       DisplayName: '&c32x &7Default God Apples'
-      DisplayItem: '314'
+      DisplayItem: '322:1'
       DisplayAmount: 1
       Lore:
         - '&7Win &c32x &7Default God Apples'
@@ -152,7 +161,7 @@ Crate:
         - '&7You just won &c32x &7Default God Apples.'
     9:
       DisplayName: '&c&l32x &7Extended Default God Apples'
-      DisplayItem: '314'
+      DisplayItem: '322:1'
       DisplayAmount: 1
       Lore:
         - '&7Win &c&l32x &7Extended Default God Apples'
@@ -167,7 +176,7 @@ Crate:
         - '&4&lMake ExtendedDefault God Apple.&7You just won &c&l32x &7Extended Default God Apples.'
     10:
       DisplayName: '&e&lCow Spawner'
-      DisplayItem: '314'
+      DisplayItem: '52'
       DisplayAmount: 1
       Lore:
         - '&7Win a &e&lCow Spawner'
@@ -182,7 +191,7 @@ Crate:
         - '&7You just won a &e&lCow Spawner.'
     11:
       DisplayName: '&e&lZombie Spawner'
-      DisplayItem: '314'
+      DisplayItem: '52'
       DisplayAmount: 1
       Lore:
         - '&7Win a &e&lZombie Spawner'
@@ -197,7 +206,7 @@ Crate:
         - '&7You just won a &e&lZombie Spawner.'
     12:
       DisplayName: '&c&l6x &8&lBedrock'
-      DisplayItem: '314'
+      DisplayItem: '7'
       DisplayAmount: 1
       Lore:
         - '&7Win &c&l6x &8&lBedrock'
