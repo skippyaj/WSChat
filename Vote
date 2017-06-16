@@ -40,60 +40,86 @@ Crate:
 #############################################
   Prizes: #All the prizes that can be gotten in the Crate.
     1:
-      DisplayName: '&7&lKit Detective' #Name of the item shown by the crate.
-      DisplayItem: '2' #Item that is shown by the crate.
-      DisplayAmount: 1 #The amount that is displayed.
-      Lore: #Lore will be shown in rewards GUI.
-        - '&7Win kit Detective'
-      MaxRange: 100 #The max range that the chance will go though.
-      Chance: 16 #Chance of that item getting picked. It would be 40/100 chance because MaxRange is 100.
-      Firework: false #Firework when it is won.
-      Glowing: false #Toggle if the item has a glowing effect but doesn't have an enchantment on it.
-      Player: '' #Set the item to 397:3 and then add the players name for this to take effect.
-#        For Cosmic Crates Only
-#############################################
-#       Tiers: #The Tiers the rewards can be found in.
-#         - 'Basic'
-#         - 'UnCommon'
-#         - 'Rare'
-#############################################
-      #Items that the player wins if this prize is picked. (If you wish not to give an Item in the prize just delete the Items Section)
-      #Please use these to make the item.
-      #Item: to decide the kind of item it is.
-      #Amount: the amount of that item they get.
-      #Name: a custom name for that item (ColorCode dose work).
-      #Lore: a custom lore for the item (ColorCode does work) and to make a new line in the lore use a , to split the lines.
-      Items:
-        - 'Item:2, Amount:32, Name:&7&lBasic Grass'
-      #Commands are the commands that are run when this prize is won. (If you wish not to use a CMD in the prize just delete the Commands Section)
-      #You can use %Player% to get the player that won the prize.
-      Commands:
-        - 'broadcast &6&l%Player% &7has just won some Basic Grass.'
-      #Messages: option allows you to send players messages and not have to pm them with commands.
-      #If you do not wish to have players get messaged that they won this prize then just remove the Messages: option.
-      Messages:
-        - '&7You just won a &7&lBasic Grass&7.'
-    2:
-      DisplayName: '&a&l$500'
-      DisplayItem: '314'
+      DisplayName: '&7Kit Detective'
+      DisplayItem: '340'
       DisplayAmount: 1
       Lore:
-        - '&7Win a $500 In-Game Money'
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 400'
+        - '&8> &7&oSharpness 40'
+        - '&8'
+        - '&8> &7&oKit Detective is apart of the $10 Detective Rank!'
       MaxRange: 100
-      Chance: 12
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Detective 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Detective Voucher!.' 
+    2:
+      DisplayName: '&7Kit Sergeant'
+      DisplayItem: '340' 
+      DisplayAmount: 1
+      Lore:
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 500'
+        - '&8> &7&oSharpness 50'
+        - '&8'
+        - '&8> &7&oKit Sergeant is apart of the $20 Sergeant Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Sergeant 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Sergeant Voucher!.'
+    4:
+      DisplayName: '&7Kit Captain'
+      DisplayItem: '340'
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 700'
+        - '&8> &7&oSharpness 70'
+        - '&8'
+        - '&8> &7&oKit Captain is apart of the $60 Captain Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Captain 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Captain Voucher!.'
+    3:
+      DisplayName: '&a&l$500'
+      DisplayItem: '339'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win &a&l$500 In-Game Money'
+      MaxRange: 100
+      Chance: 15
       Firework: true
       Glowing: false
       Player: ''
       Commands:
         - 'eco give %Player% 500'
       Messages:
-        - '&7You just won &a$500 In-Game Money.'
+        - '&9&l(!) &7&oYou just won &a&l$500 In-Game Money'
     3:
       DisplayName: '&a&l$1000'
-      DisplayItem: '314'
+      DisplayItem: '339'
       DisplayAmount: 1
       Lore:
-        - '&7Win a &a&l$1000 In-Game Money'
+        - '&7Win &a&l$1000 In-Game Money'
       MaxRange: 100
       Chance: 12
       Firework: true
@@ -102,98 +128,79 @@ Crate:
       Commands:
         - 'eco give %Player% 1000'
       Messages:
-        - '&7You just won &a&l$1000 In-Game Money'
-    4:
-      DisplayName: '&a&l$1500'
-      DisplayItem: '314'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win a $1500 In-Game Money'
-      MaxRange: 100
-      Chance: 12
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'eco give %Player% 1500'
-      Messages:
-        - '&7You just won &a$1500 In-Game Money.'
-    5:
-      DisplayName: '&7Kit &9&lDetective'
-      DisplayItem: '314'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win a Kit &9&lDetective'
-      DisplayEnchantments: #Adds enchantments to the display item.
-        - 'PROTECTION_ENVIRONMENTAL:1'
-        - 'OXYGEN:1'
-      MaxRange: 100
-      Chance: 16
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'kit %Player% Detective'
-      Messages:
-        - '&7You just won a Kit &9&lDetective.'
-    6:
-      DisplayName: '&7Kit &f&lSergeant'
-      DisplayItem: '314'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win a Kit &f&lSergeant'
-      MaxRange: 100
-      Chance: 16
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'kit %Player% Sergeant'
-      Messages:
-        - '&7You just won a Kit &f&lSergeant.'
-    7:
-      DisplayName: '&7Kit &a&lCaptain'
-      DisplayItem: '314'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win a Kit &a&lCaptain'
-      MaxRange: 100
-      Chance: 16
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'kit %Player% Captain'
-      Messages:
-        - '&7You just won Kit &a&lCaptain.'
-    8:
-      DisplayName: '&c16x &7Default God Apples'
-      DisplayItem: '314'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win &c16x &7Default God Apples'
-      MaxRange: 100
-      Chance: 8
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'giveitem %Player% default 16'
-      Messages:
-        - '&7You just won &c16x &7Default God Apples.'
-
-    9:
+        - '&9&l(!) &7&oYou just won &a&l$1000 In-Game Money'
+    12:
       DisplayName: '&e&lCow Spawner'
-      DisplayItem: '314'
+      DisplayItem: '52'
       DisplayAmount: 1
       Lore:
         - '&7Win a &e&lCow Spawner'
       MaxRange: 100
-      Chance: 1
+      Chance: 9
       Firework: true
       Glowing: false
       Player: ''
       Commands:
         - 'es give %Player% Cow 1'
       Messages:
-        - '&7You just won a &e&lCow Spawner.'
+        - '&9&l(!) &7&oYou just won a &e&lCow Spawner.'
+    15:
+      DisplayName: '&7Common key'
+      DisplayItem: '131'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a Common key'
+      MaxRange: 100
+      Chance: 5
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Common 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a Common Key’s.'
+    15:
+      DisplayName: '&7Rare key'
+      DisplayItem: '131'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a Rare key'
+      MaxRange: 100
+      Chance: 3
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Rare 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a Rare Key.'
+    15:
+      DisplayName: '&72x Common key'
+      DisplayItem: '131'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a 2x Common key’s'
+      MaxRange: 100
+      Chance: 5
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Common 2 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a 2x Common Key’s.'
+    15:
+      DisplayName: '&72x Rare key'
+      DisplayItem: '131'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a 2x Rare key’s'
+      MaxRange: 100
+      Chance: 3
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Rare 2 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a 2x Rare Key’s.'
