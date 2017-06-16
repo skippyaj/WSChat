@@ -3,7 +3,7 @@ Crate:
   CrateName: '&8Common Crate' #Name of the Inventory if a GUI crate.
   StartingKeys: 0 #Starting amount of keys when the player 1st joins.
   InGUI: true #If the crate shows in the /cc GUI. (If the crate type is QuickCrate/CrateOnTheGo/FireCracker then the Crate will not work. Quick Crate requires a Physical Crate.)
-  Slot: 1 #Slot the item is in the GUI.
+  Slot: 10 #Slot the item is in the GUI.
   OpeningBroadCast: false #Enables/Disables the Broadcasts message when they open a crate.
   BroadCast: '%Prefix%&6&l%Player% &7is opening a &7&lBasic Chest&7.' #Message that is broadcasted when opening the crate.
   Item: '54' #Item the crate is in the GUI
