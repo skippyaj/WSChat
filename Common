@@ -3,7 +3,7 @@ Crate:
   CrateName: '&8Common Crate' #Name of the Inventory if a GUI crate.
   StartingKeys: 0 #Starting amount of keys when the player 1st joins.
   InGUI: true #If the crate shows in the /cc GUI. (If the crate type is QuickCrate/CrateOnTheGo/FireCracker then the Crate will not work. Quick Crate requires a Physical Crate.)
-  Slot: 10 #Slot the item is in the GUI.
+  Slot: 1 #Slot the item is in the GUI.
   OpeningBroadCast: false #Enables/Disables the Broadcasts message when they open a crate.
   BroadCast: '%Prefix%&6&l%Player% &7is opening a &7&lBasic Chest&7.' #Message that is broadcasted when opening the crate.
   Item: '54' #Item the crate is in the GUI
@@ -40,26 +40,6 @@ Crate:
 #############################################
   Prizes: #All the prizes that can be gotten in the Crate.
     1:
-      DisplayName: '&7&lKit Detective' 
-      DisplayItem: '340' 
-      DisplayAmount: 1 
-      Lore: 
-        - '&7'
-        - '&3&lDescription:'
-        - '&8> &7&oProtection 400'
-        - '&8> &7&oSharpness 30'
-        - '&8'
-        - '&8> &7&oKit Detective is apart of the $10 Detective Rank!'
-      MaxRange: 100 
-      Chance: 16 
-      Firework: false 
-      Glowing: true 
-      Player: '' 
-      Commands:
-        - 'voucher give Detective 1 %Player%'
-      Messages:
-        - '&9&l(!) &7&oYou have won Kit Detective Voucher!.'
-    3:
       DisplayName: '&7Kit Sergeant'
       DisplayItem: '340' 
       DisplayAmount: 1
@@ -79,7 +59,7 @@ Crate:
         - 'voucher give Sergeant 1 %Player%'
       Messages:
         - '&9&l(!) &7&oYou have won Kit Sergeant Voucher!.'
-    4:
+    2:
       DisplayName: '&7Kit Lieutenant'
       DisplayItem: '340' 
       DisplayAmount: 1
@@ -99,7 +79,108 @@ Crate:
         - 'voucher give Lieutenant 1 %Player%'
       Messages:
         - '&9&l(!) &7&oYou have won Kit Lieutenant Voucher!.'
+    3:
+      DisplayName: '&7Kit Captain'
+      DisplayItem: '340'
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 700'
+        - '&8> &7&oSharpness 70'
+        - '&8'
+        - '&8> &7&oKit Captain is apart of the $60 Captain Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Captain 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Captain Voucher!.'
+    4:
+      DisplayName: '&7Kit Enforcer'
+      DisplayItem: '340' 
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 1500'
+        - '&8> &7&oSharpness 105'
+        - '&8'
+        - '&8> &7&oKit Enforcer is apart of the $60 Captain Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Enforcer 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Enforcer Voucher!.'
+
     5:
+      DisplayName: '&7Kit Major'
+      DisplayItem: '340'
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 900'
+        - '&8> &7&oSharpness 90'
+        - '&8'
+        - '&8> &7&oKit Major is apart of the $75 Major Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Major 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Major Voucher!.'
+    6:
+      DisplayName: '&7Kit Admiral'
+      DisplayItem: '340' 
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 1000'
+        - '&8> &7&oSharpness 100'
+        - '&8'
+        - '&8> &7&oKit Admiral is apart of the $180 Admiral Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Admiral 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Admiral Voucher!.'
+    7:
+      DisplayName: '&7Kit Guard'
+      DisplayItem: '340' 
+      DisplayAmount: 1
+      Lore: 
+        - '&7'
+        - '&3&lDescription:'
+        - '&8> &7&oProtection 2000'
+        - '&8> &7&oSharpness 120'
+        - '&8'
+        - '&8> &7&oKit Guard is apart of the $75 Major Rank!'
+      MaxRange: 100
+      Chance: 16
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'voucher give Guard 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou have won Kit Guard Voucher!.'
+    8:
       DisplayName: '&a&l$10'
       DisplayItem: '339'
       DisplayAmount: 1
@@ -113,13 +194,13 @@ Crate:
       Commands:
         - 'eco give %Player% 10'
       Messages:
-        - '&7You just won &a$10 In-Game Money.'
-    6:
+        - '&9&l(!) &7&oYou just won &a$10 In-Game Money.'
+    9:
       DisplayName: '&a&l$100'
       DisplayItem: '339'
       DisplayAmount: 1
       Lore:
-        - '&7Win a $100 In-Game Money'
+        - '&7Win $100 In-Game Money'
       MaxRange: 100
       Chance: 12
       Firework: true
@@ -128,13 +209,13 @@ Crate:
       Commands:
         - 'eco give %Player% 100'
       Messages:
-        - '&7You just won &a$100 In-Game Money.'
-    7:
+        - '&9&l(!) &7&oYou just won &a$100 In-Game Money.'
+    10:
       DisplayName: '&a&l$500'
       DisplayItem: '339'
       DisplayAmount: 1
       Lore:
-        - '&7Win a $500 In-Game Money'
+        - '&7Win $500 In-Game Money'
       MaxRange: 100
       Chance: 12
       Firework: true
@@ -143,8 +224,8 @@ Crate:
       Commands:
         - 'eco give %Player% 500'
       Messages:
-        - '&7You just won &a$500 In-Game Money.'
-    8:
+        - '&9&l(!) &7&oYou just won &a$500 In-Game Money.'
+    11:
       DisplayName: '&c32x &7Default God Apples'
       DisplayItem: '322:1'
       DisplayAmount: 1
@@ -158,23 +239,8 @@ Crate:
       Commands:
         - 'giveitem %Player% default 32'
       Messages:
-        - '&7You just won &c32x &7Default God Apples.'
-    9:
-      DisplayName: '&c&l32x &7Extended Default God Apples'
-      DisplayItem: '322:1'
-      DisplayAmount: 1
-      Lore:
-        - '&7Win &c&l32x &7Extended Default God Apples'
-      MaxRange: 100
-      Chance: 5
-      Firework: true
-      Glowing: false
-      Player: ''
-      Commands:
-        - 'giveitem %Player% Edefault 16'
-      Messages:
-        - '&4&lMake ExtendedDefault God Apple.&7You just won &c&l32x &7Extended Default God Apples.'
-    10:
+        - '&9&l(!) &7&oYou just won &c32x &7Default God Apples.'
+    12:
       DisplayName: '&e&lCow Spawner'
       DisplayItem: '52'
       DisplayAmount: 1
@@ -188,8 +254,8 @@ Crate:
       Commands:
         - 'es give %Player% Cow 1'
       Messages:
-        - '&7You just won a &e&lCow Spawner.'
-    11:
+        - '&9&l(!) &7&oYou just won a &e&lCow Spawner.'
+    13:
       DisplayName: '&e&lZombie Spawner'
       DisplayItem: '52'
       DisplayAmount: 1
@@ -203,8 +269,8 @@ Crate:
       Commands:
         - 'es give %Player% Zombie 1'
       Messages:
-        - '&7You just won a &e&lZombie Spawner.'
-    12:
+        - '&9&l(!) &7&oYou just won a &e&lZombie Spawner.'
+    14:
       DisplayName: '&c&l6x &8&lBedrock'
       DisplayItem: '7'
       DisplayAmount: 1
@@ -218,4 +284,19 @@ Crate:
       Commands:
         - 'give %Player% bedrock 6'
       Messages:
-        - '&7You just won &c6x &8&lBedrock.'
+        - '&9&l(!) &7&oYou just won &c6x &8&lBedrock.'
+    15:
+      DisplayName: '&7Rare key'
+      DisplayItem: '7'
+      DisplayAmount: 1
+      Lore:
+        - '&7Win a Rare key'
+      MaxRange: 100
+      Chance: 1
+      Firework: true
+      Glowing: false
+      Player: ''
+      Commands:
+        - 'crate give physical Rare 1 %Player%'
+      Messages:
+        - '&9&l(!) &7&oYou just won a Rare Key.'
